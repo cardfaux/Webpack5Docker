@@ -12,4 +12,4 @@ ENV PATH /app/node_modules/.bin/:$PATH
 
 COPY . .
 
-CMD ["webpack-dev-server", "--open"]
+CMD ["webpack-dev-server"]
