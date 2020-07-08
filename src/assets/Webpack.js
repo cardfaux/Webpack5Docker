@@ -36,7 +36,6 @@ export default function Webpack() {
     <Page>
       <WebpackLogo src={WebpackPng} />
       <WebpackTitle>Webpack 5</WebpackTitle>
-      <WebpackTitle>With Hot-Reload again</WebpackTitle>
     </Page>
   );
 };

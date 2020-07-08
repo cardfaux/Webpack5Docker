@@ -21,7 +21,8 @@ module.exports = (env, argv) => {
     mode: "development",
     devtool: 'source-map',
     devServer: {
-      contentBase: './dist',
+      // contentBase: './dist',
+      contentBase: path.join(__dirname, 'dist'),
       port: 3000
     },
     output: {
