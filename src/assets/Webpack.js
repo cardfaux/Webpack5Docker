@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import WebpackPng from './webpacklogo.png';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import WebpackPng from "./webpacklogo.png";
 
 const rotate = keyframes`
   0% { transform: rotate(0deg); }
@@ -30,7 +30,7 @@ const WebpackLogo = styled.img`
 `;
 
 export default function Webpack() {
-  const count = 5 + '1';
+  const count = 5 + "1";
 
   return (
     <Page>
@@ -38,4 +38,4 @@ export default function Webpack() {
       <WebpackTitle>Webpack 5</WebpackTitle>
     </Page>
   );
-};
+}

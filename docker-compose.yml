@@ -1,7 +1,7 @@
 version: '2.4'
 
 services:
-  express:
+  webpack:
     build: .
     command: /app/node_modules/.bin/webpack-dev-server ./src/index.js
     ports:
@@ -10,4 +10,3 @@ services:
       - .:/app
     environment:
       - NODE_ENV=development
-      - PORT=3000

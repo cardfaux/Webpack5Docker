@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const htmlConfig = {
   title: "WebPack-5",
@@ -9,25 +9,26 @@ const htmlConfig = {
   scriptLoading: "defer",
   favicon: "favicon.ico",
   meta: { viewport: "width=device-width,initial-scale=1" },
-  template: "./src/template.html"
+  template: "./src/template.html",
 };
 
 module.exports = (env, argv) => {
   return {
     entry: {
-      homePage: "./src/index.js"
+      homePage: "./src/index.js",
     },
     // mode: env.production ? "production" : "development",
     mode: "development",
-    devtool: 'source-map',
+    devtool: "source-map",
     devServer: {
       // contentBase: './dist',
-      contentBase: path.join(__dirname, 'dist'),
-      port: 3000
+      contentBase: path.join(__dirname, "dist"),
+      host: "0.0.0.0",
+      port: 3000,
     },
     output: {
-      filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      filename: "[name].bundle.js",
+      path: path.resolve(__dirname, "dist"),
     },
     module: {
       rules: [
@@ -36,24 +37,24 @@ module.exports = (env, argv) => {
           use: {
             loader: "babel-loader",
           },
-          exclude: /node_modules/
+          exclude: /node_modules/,
         },
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: ["style-loader", "css-loader"],
         },
         {
           test: /\.(png|jpg|jpeg|gif|svg)$/,
-          loader: 'file-loader',
+          loader: "file-loader",
           options: {
-            name: 'assets/[name].[ext]'
-          }
-        }
-      ]
+            name: "assets/[name].[ext]",
+          },
+        },
+      ],
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin(htmlConfig)
-    ]
+      new HtmlWebpackPlugin(htmlConfig),
+    ],
   };
 };
